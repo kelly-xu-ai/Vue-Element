@@ -22,6 +22,17 @@ export default {
         ]
       }
     };
+  },
+  mounted() {
+    this.getTestData();
+  },
+  methods: {
+    getTestData() {
+      let base_url =  "http://192.168.9.246:9193";
+      this.axios.post(`${base_url}/installGuide/getMainPage`, {}).then(response => {
+        console.log(response);
+      });
+    }
   }
 };
 </script>
