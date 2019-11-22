@@ -9,15 +9,15 @@
     <div>
       <router-link to="/mytest">查看图表</router-link>
     </div>
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: "app",
+  name: 'App',
   components: {}
-};
+}
 </script>
 
 <style>

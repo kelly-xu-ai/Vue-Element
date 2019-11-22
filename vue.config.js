@@ -8,7 +8,6 @@ function resolve(dir) {
 
 const name = defaultSettings.title || 'vue Element Template' // page title
 
-
 const port = process.env.port || process.env.npm_config_port || 8080 // serve port
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
@@ -22,16 +21,16 @@ module.exports = {
    */
   publicPath: '/',
   outputDir: 'dist',
-  assetsDir: 'static', // 放置打包生成的静态资源 
-  productionSourceMap: false,  // 生产环境不显示源码
+  assetsDir: 'static', // 放置打包生成的静态资源
+  productionSourceMap: false, // 生产环境不显示源码
   devServer: {
     port: port,
     open: true,
     overlay: {
       warnings: false,
       errors: true
-    },
-   /*  proxy: {
+    }
+    /*  proxy: {
       // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
