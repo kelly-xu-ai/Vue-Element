@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 import './axios'
+import 'normalize.css/normalize.css' // a modern alternative to CSS resets
+import '@/styles/index.scss' // global css
 
 Vue.config.productionTip = false
 

@@ -13,6 +13,7 @@
     "core-js": "^3.3.2",
     "echarts": "^4.5.0",
     "element-ui": "^2.4.5",
+    "normalize.css": "^8.0.1",
     "v-charts": "^1.19.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
