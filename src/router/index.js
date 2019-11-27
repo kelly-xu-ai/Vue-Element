@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Mytest from '../views/mytest.vue'
+import Mutest from '../views/Mutest.vue'
 
 Vue.use(VueRouter)
 
@@ -20,9 +20,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/Mytest',
-    name: 'mytest',
-    component: Mytest
+    path: '/mutest',
+    name: 'mutest',
+    component: Mutest
+  },
+  {
+    path: '/i18n',
+    name: 'i18n',
+    component: () => import('@/views/i18n-demo/index.vue')
   }
 ]
 

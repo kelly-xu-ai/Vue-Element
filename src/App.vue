@@ -7,7 +7,10 @@
       <router-link to="/about">about</router-link>
     </div>
     <div>
-      <router-link to="/mytest">查看图表</router-link>
+      <router-link to="/mutest">查看图表</router-link>
+    </div>
+    <div>
+      <router-link to="/i18n">国际化</router-link>
     </div>
     <router-view />
   </div>
