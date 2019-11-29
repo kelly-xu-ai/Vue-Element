@@ -1,43 +1,92 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Mutest from '../views/Mutest.vue'
+import Router from 'vue-router'
+/* Layout */
+import Layout from '@/layout'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
+export const constantRoutes = [
+  {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
   {
     path: '/',
-    name: 'home',
-    component: Home
+    hidden: false,
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'home',
+        component: () => import('../views/home/index.vue'),
+        meta: { title: 'home', icon: 'form' }
+      }
+    ]
   },
   {
     path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
-    path: '/mutest',
-    name: 'mutest',
-    component: Mutest
-  },
-  {
-    path: '/i18n',
-    name: 'i18n',
-    component: () => import('@/views/i18n-demo/index.vue')
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'about',
+        component: () => import('../views/about/index.vue'),
+        meta: { title: 'about', icon: 'form' }
+      }
+    ]
   },
   {
     path: '/theme',
-    name: 'theme',
-    component: () => import('@/views/theme/index.vue')
-  }
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'theme',
+        component: () => import('../views/theme/index.vue'),
+        meta: { title: 'theme', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/mutest',
+    hidden: false,
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'mutest',
+        component: () => import('../views/mutest/index.vue'),
+        meta: { title: 'mutest', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/i18n',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'i18n',
+        component: () => import('../views/i18n/index.vue'),
+        meta: { title: 'i18n', icon: 'form' }
+      }
+    ]
+  },
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
-const router = new VueRouter({
-  routes
+const createRouter = () => new Router({
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constantRoutes
 })
+
+const router = createRouter()
+
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
 
 export default router

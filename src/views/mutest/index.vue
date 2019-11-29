@@ -24,7 +24,7 @@ export default {
     }
   },
   mounted() {
-    this.getTestData()
+    // this.getTestData()
   },
   methods: {
     getTestData() {
