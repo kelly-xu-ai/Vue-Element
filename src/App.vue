@@ -4,7 +4,10 @@
       <router-link to="/">home</router-link>
     </div>
     <div>
-      <router-link to="/about">about</router-link>
+      <router-link to="/about">换肤（ThemePicker）</router-link>
+    </div>
+    <div>
+      <router-link to="/theme">换肤（select）</router-link>
     </div>
     <div>
       <router-link to="/mutest">查看图表</router-link>

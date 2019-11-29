@@ -16,5 +16,9 @@ export default {
     one: 'One',
     two: 'Two',
     three: 'Three'
+  },
+  theme: {
+    change: 'Change Theme',
+    documentation: 'Theme documentation'
   }
 }

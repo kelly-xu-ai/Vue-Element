@@ -28,6 +28,11 @@ const routes = [
     path: '/i18n',
     name: 'i18n',
     component: () => import('@/views/i18n-demo/index.vue')
+  },
+  {
+    path: '/theme',
+    name: 'theme',
+    component: () => import('@/views/theme/index.vue')
   }
 ]
 

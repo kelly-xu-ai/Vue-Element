@@ -16,5 +16,9 @@ export default {
     one: '一',
     two: '二',
     three: '三'
+  },
+  theme: {
+    change: '换肤',
+    documentation: '换肤文档'
   }
 }
